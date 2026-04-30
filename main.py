@@ -167,7 +167,7 @@ async def process_code(message: Message, state: FSMContext):
 async def search(message: Message):
     if not await check_sub(message.from_user.id):
         # Kanal linkiga / qo'shish
-        kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="📢 Kanalga a'zo bo'lish", url=f"https://t.me{CHANNELS[0].replace('@','')}") ]])
+        kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="📢 Kanalga a'zo bo'lish", url=f"https://t.me/{CHANNELS[0].replace('@','')}") ]])
         return await message.answer("<b>Botingizdan foydalanish uchun kanalimizga a'zo bo'ling!</b>", reply_markup=kb)
     
     async with aiosqlite.connect("kino.db") as db:
