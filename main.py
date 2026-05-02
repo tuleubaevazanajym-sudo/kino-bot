@@ -156,7 +156,7 @@ async def process_code(message: Message, state: FSMContext):
 @dp.message(F.text)
 async def search(message: Message):
     if not await check_sub(message.from_user.id):
-        kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="A'zo bo'lish", url="https://t.me") ]])
+        kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="A'zo bo'lish", url="https://t.me/") ]])
         return await message.answer("Kanalga a'zo bo'ling!", reply_markup=kb)
     
     async with aiosqlite.connect("kino.db") as db:
